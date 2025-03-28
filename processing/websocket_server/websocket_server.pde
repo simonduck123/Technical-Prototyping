@@ -37,22 +37,19 @@ void setup(){
 
 void draw(){
   background(128);
-  ellipse(x,y,10,10);
+  ellipse(x,y,10,10);  // TURN ON FOR MOUSE 1.1
   sendMessage();
   //ellipseY y - (data * 450);
-  //moveBallUp = ellipseY * 500
-  //ellipse(x, moveBallUp, 10, 10);
-  //println(moveBallUp);
-  
+  //ellipse(200, moveBallUp, 10, 10); // TURN ON FOR MIC 1.2 
 }
 
 void mouseMoved() {
-  //x = mouseX;
-  //y = mouseY;
+  x = mouseX;
+  y = mouseY;
   //mouseCoords.setInt("xPos", x);
   //mouseCoords.setInt("yPos", y);
   //ws.sendMessage(mouseCoords.toString());
-  //ws.sendMessage(x + "," + y);
+  ws.sendMessage(x + "," + y);
   
 }
 
@@ -95,7 +92,15 @@ void webSocketServerEvent(String data){
  //JSONObject json = parseJSONObject(data);
  //  x = json.getInt("xPos");
  //  y = json.getInt("yPos");
-  float[] mouseCoordinates = float(split(data, ','));
-  x = mouseCoordinates[0];
-  y = mouseCoordinates[1];
+
+      //Move ball with Mouse 1.1
+      float[] mouseCoordinates = float(split(data, ','));
+      x = mouseCoordinates[0];
+      y = mouseCoordinates[1];
+
+    //Move Ball with MIC 1.2
+    //float volume = Float.parseFloat(data.trim()); // Convert to float
+    //moveBallUp = map(volume, 0, 1, height, 0); // Normalize to screen height
+    
 }
+    

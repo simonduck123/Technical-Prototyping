@@ -54,12 +54,11 @@ public class Connection : MonoBehaviour
     {
       // Reading a plain text message
       String message = System.Text.Encoding.UTF8.GetString(bytes);
-      Debug.Log(message);
       //JSONObject json = JSONObject.CreateFromJSON(message);
       string[] mouseCoordinates = message.Split(',');
 
-      //Debug.Log(json);
-      Debug.Log(mouseCoordinates);
+        Debug.Log(message);
+
 
       // float xPosUnityCoordinates = map(json.xPos, 0, 400, -9, 9);
       // float yPosUnityCoordinates = map(json.yPos, 0, 400, 4, -4);

@@ -55,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
         movement.Normalize();
 
         // Apply movement to the player's Rigidbody2D component
-        rb.velocity = movement * moveSpeed;
+        rb.linearVelocity = movement * moveSpeed;
     }
 
     public void ReceiveString(OSCMessage message)
@@ -76,7 +76,7 @@ public class EnemyMovement : MonoBehaviour
         if (rb != null)
         {
             // Set the velocity of the projectile to move in the direction the ship is facing
-            rb.velocity = -transform.up * projectileSpeed; // Change here from transform.right to transform.up
+            rb.linearVelocity = -transform.up * projectileSpeed; // Change here from transform.right to transform.up
         }
         else
         {

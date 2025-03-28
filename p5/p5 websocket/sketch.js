@@ -9,8 +9,8 @@ let y = 200;
 
 function setup() {
   createCanvas(400, 400);
-  // let cnv = createCanvas(400, 400);
-  // cnv.mousePressed(userStartAudio);
+  //let cnv = createCanvas(400, 400);
+  //cnv.mousePressed(userStartAudio);
   initWebSocket(); 
 
   mic = new p5.AudioIn();
@@ -19,12 +19,14 @@ function setup() {
 
 function draw() {
   background(128);
-  // console.log(vol);
+  vol = mic.getLevel();
   let ellipseY = y - (vol * 450);
   ellipse(x, ellipseY, 10, 10);
 
-  //socket.send(vol);
+    //socket.send(vol); //TURN ON FOR MIC
+  
 }
+
 // sending mouse movement to processing
 function mouseMoved() {
   
@@ -39,7 +41,7 @@ function mouseMoved() {
 
     // let jsonString = JSON.stringify(coordinateObject);
     let CSVString = (x + "," + y);
-    socket.send(CSVString);
+    socket.send(CSVString); //TURN ON FOR MOUSE
   }
 }
 

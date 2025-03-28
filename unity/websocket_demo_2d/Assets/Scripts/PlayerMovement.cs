@@ -44,6 +44,6 @@ public class PlayerMovement : MonoBehaviour
         movement.Normalize();
 
         // Apply movement to the player's Rigidbody2D component
-        rb.velocity = movement * moveSpeed;
+        rb.linearVelocity = movement * moveSpeed;
     }
 }
