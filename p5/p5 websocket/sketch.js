@@ -23,7 +23,7 @@ function draw() {
   let ellipseY = y - (vol * 450);
   ellipse(x, ellipseY, 10, 10);
 
-    //socket.send(vol); //TURN ON FOR MIC
+    //socket.send(vol); //TURN ON FOR MIC 1.2
   
 }
 
@@ -41,7 +41,7 @@ function mouseMoved() {
 
     // let jsonString = JSON.stringify(coordinateObject);
     let CSVString = (x + "," + y);
-    socket.send(CSVString); //TURN ON FOR MOUSE
+    socket.send(CSVString); //TURN ON FOR MOUSE 1.1
   }
 }
 
