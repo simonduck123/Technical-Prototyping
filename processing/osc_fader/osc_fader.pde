@@ -53,7 +53,7 @@ void sendMessage() {
   // normalize the value between 0.0 - 1.0; 
   value = mouseX/float(width);
   
-  OscMessage myMessage = new OscMessage("/test");
+  OscMessage myMessage = new OscMessage("/fader");
   myMessage.add(value);
   //println(value);
   oscP5.send(myMessage, myRemoteLocation); 
@@ -77,11 +77,11 @@ void oscEvent(OscMessage theOscMessage) {
         //println(value);
         
         if(value == 1.0f){
-          colorSlider = #FF0000;
+          colorSlider = #FFFF00;
         }else if(value == 2.0f){
-         colorSlider = #08FF11; 
+         colorSlider = #B5651D; 
         }else if(value == 3.0f){
-         colorSlider = #0822FF; 
+         colorSlider = #800080; 
          
         }
      }

@@ -18,20 +18,12 @@ namespace extOSC.Examples
 
 		#region Unity Methods
 
-		protected virtual void Start()
-		{
-			//	var message = new OSCMessage(Address);
-			//	message.AddValue(OSCValue.String("Hello, world!"));
-
-			//	Transmitter.Send(message);
-		}
 
 		public void ButtonOnClick(){
 			var message = new OSCMessage(Address);
 
 			System.Random valuenumber = new System.Random();
 			float num = valuenumber.Next(1, 4);
-			//message.AddValue(OSCValue.Int(num));
 			message.AddValue(OSCValue.Float(num));
 
 			Transmitter.Send(message);

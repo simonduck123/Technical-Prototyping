@@ -39,8 +39,7 @@ void draw(){
   background(128);
   ellipse(x,y,10,10);  // TURN ON FOR MOUSE 1.1
   sendMessage();
-  //ellipseY y - (data * 450);
-  //ellipse(200, moveBallUp, 10, 10); // TURN ON FOR MIC 1.2 
+ //ellipse(moveBallUp,y, 10, 10); // TURN ON FOR MIC 1.2 
 }
 
 void mouseMoved() {
@@ -53,33 +52,22 @@ void mouseMoved() {
   
 }
 
-//void mouseClicked() {
-//  sendMessage();
-//}
-
-//void mouseDragged() {
-//  sendMessage();
-//}
-
 //Send OSC to Unity
 void sendMessage() {
   
   activity = "sending: ";
   
   // normalize the value between 0.0 - 1.0; 
-  //value = mouseX/float(width);
   float xValue = x/float(width);
   
-  OscMessage myMessage = new OscMessage("/test");
+  OscMessage myMessage = new OscMessage("/fader");
   myMessage.add(xValue);
-  //println(value);
   oscP5.send(myMessage, myRemoteLocation); 
 }
 
 //Receive mouse movement from P5
 void webSocketServerEvent(String data){
-  
-  //println(data);
+ 
   
   // echo the message, so all connected clients will
   // receive it. 

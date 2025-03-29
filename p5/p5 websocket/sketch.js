@@ -20,10 +20,10 @@ function setup() {
 function draw() {
   background(128);
   vol = mic.getLevel();
-  let ellipseY = y - (vol * 450);
-  ellipse(x, ellipseY, 10, 10);
+  let ellipseX = x - (vol * 450);
+  ellipse(ellipseX, y, 10, 10);
 
-    //socket.send(vol); //TURN ON FOR MIC 1.2
+  //socket.send(vol); //TURN ON FOR MIC 1.2
   
 }
 
